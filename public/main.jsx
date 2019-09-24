@@ -20,8 +20,19 @@ class Signin extends React.Component{
     }
 
     signIn(){
-         alert('email is : ' +this.state.email+ ' password is : '+this.state.password);
+        // alert('email is : ' +this.state.email+ ' password is : '+this.state.password);
         // alert('lalalal')
+        axios.post('/signin', {
+            email: this.state.email,
+            password:this.state.password
+        })
+        .then(function (response){
+            console.log(response);
+        })
+        .catch(function (error){
+            console.log(error);
+        });
+    
     }
 
     render(){
@@ -38,6 +49,7 @@ class Signin extends React.Component{
         )
     }
 
+  
 }
 
 
